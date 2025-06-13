@@ -123,6 +123,7 @@ export const AuthProvider = ({ children }) => {
     updateProfile,
     changePassword,
     checkAuth
+    
   };
 
   return (
