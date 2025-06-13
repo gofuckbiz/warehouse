@@ -9,6 +9,45 @@ const api = axios.create({
   },
 });
 
+// Интерсептор для автоматического добавления токена в заголовки
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Интерсептор для обработки ошибок авторизации
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401 || error.response?.status === 403) {
+      // Токен недействителен или истек
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
+
+// Авторизация
+export const authAPI = {
+  register: (data) => api.post('/auth/register', data),
+  login: (data) => api.post('/auth/login', data),
+  getProfile: () => api.get('/auth/profile'),
+  updateProfile: (data) => api.put('/auth/profile', data),
+  changePassword: (data) => api.post('/auth/change-password', data),
+  getAllUsers: () => api.get('/auth/users'),
+  deleteUser: (id) => api.delete(`/auth/users/${id}`),
+};
+
 // Поставщики
 export const suppliersAPI = {
   getAll: () => api.get('/suppliers'),
