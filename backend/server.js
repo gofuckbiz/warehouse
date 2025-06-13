@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const { initDatabase } = require('./database');
 
 // Импорт маршрутов
+const authRoutes = require('./routes/auth');
 const supplierRoutes = require('./routes/suppliers');
 const clientRoutes = require('./routes/clients');
 const furnitureRoutes = require('./routes/furniture');
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Маршруты API
+app.use('/api/auth', authRoutes);
 app.use('/api/suppliers', supplierRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/furniture', furnitureRoutes);
@@ -29,6 +31,7 @@ app.get('/', (req, res) => {
     message: 'API системы учета мебельного склада',
     version: '1.0.0',
     endpoints: {
+      auth: '/api/auth',
       suppliers: '/api/suppliers',
       clients: '/api/clients',
       furniture: '/api/furniture',
