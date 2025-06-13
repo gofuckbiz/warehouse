@@ -1,0 +1,156 @@
+# Зависимости
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Файлы среды выполнения
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Директории покрытия тестами
+lib-cov
+coverage/
+*.lcov
+.nyc_output
+
+# Кэш инструментов
+.npm
+.eslintcache
+.stylelintcache
+
+# Опциональный кэш npm
+.npm
+
+# Опциональный кэш REPL
+.node_repl_history
+
+# Вывод 'npm pack'
+*.tgz
+
+# Файл целостности Yarn
+.yarn-integrity
+
+# Файлы переменных окружения
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Кэш parcel-bundler
+.cache
+.parcel-cache
+
+# Вывод Next.js
+.next
+
+# Вывод Nuxt.js
+.nuxt
+dist
+
+# Файлы Gatsby
+.cache/
+public
+
+# Файлы Storybook
+.out
+.storybook-out
+
+# Временные папки
+.tmp
+.temp
+
+# Логи
+logs
+*.log
+
+
+# Файлы операционной системы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Файлы сборки React
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Файлы сборки
+build/
+dist/
+
+# Файлы конфигурации редактора
+.editorconfig
+
+# Файлы TypeScript
+*.tsbuildinfo
+
+# Microbundle кэш
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Опциональные файлы REPL
+.node_repl_history
+
+# Вывод 'npm pack'
+*.tgz
+
+# Файлы Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Файлы резервных копий
+*.bak
+*.backup
+*.old
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Файлы конфигурации локального сервера
+.env.development
+.env.production
+
+# Файлы документации (если генерируются автоматически)
+docs/
+
+# Файлы тестирования
+coverage/
+.nyc_output/
+
+# Файлы безопасности (ключи, сертификаты)
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Файлы конфигурации развертывания
+.deployment
+deploy.sh
+
+# Файлы мониторинга
+.pm2/ 
